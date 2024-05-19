@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Котировки</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Котировки</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="analytics.html">Аналитика</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="dashboard.html">Личный кабинет</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Котировки на китайской сырьевой бирже</h2>
+        <label for="product">Выберите продукт:</label>
+        <select id="product" onchange="updateQuotes()">
+            <option value="soy">Соевое масло</option>
+            <option value="rape">Рапсовое масло</option>
+        </select>
+        <div id="quotes">
+            <p id="soy">Соевое масло: 8000 юаней/тонна</p>
+            <p id="rape" style="display: none;">Рапсовое масло: 7600 юаней/тонна</p>
+        </div>
+    </main>
+    <script>
+        function updateQuotes() {
+            var product = document.getElementById("product").value;
+            document.getElementById("soy").style.display = product === "soy" ? "block" : "none";
+            document.getElementById("rape").style.display = product === "rape" ? "block" : "none";
+        }
+    </script>
+</body>
+</html>
