@@ -14,6 +14,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="quotes.html">Котировки</a></li>
                 <li class="nav-item"><a class="nav-link" href="analytics.html">Аналитика</a></li>
                 <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
                 <li class="nav-item"><a class="nav-link" href="dashboard.html">Личный кабинет</a></li>
@@ -32,7 +33,7 @@
         </div>
         <div id="quotes" class="my-3">
             <p id="soy" class="h4">Соевое масло: 8000 юаней/тонна</p>
-            <p id="rape" class="h4" style="display: none;">Рапсовое масло: 7600 юаней/тонна</p>
+            <p id="rape" class="h4" style="display: none;">Рапсовое масло: 7500 юаней/тонна</p>
         </div>
         <canvas id="priceChart" width="400" height="200"></canvas>
     </main>
@@ -51,13 +52,13 @@
                 labels: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн'],
                 datasets: [{
                     label: 'Соевое масло',
-                    data: [7800, 7900, 8000, 8100, 8200, 8300],
+                    data: [7800, 7950, 7700, 8100, 8200, 8000],
                     borderColor: 'rgba(75, 192, 192, 1)',
                     borderWidth: 1,
                     fill: false
                 }, {
                     label: 'Рапсовое масло',
-                    data: [7500, 7600, 7700, 7800, 7900, 8000],
+                    data: [7500, 7700, 7750, 7800, 7600, 7500],
                     borderColor: 'rgba(255, 159, 64, 1)',
                     borderWidth: 1,
                     fill: false
@@ -73,8 +74,8 @@
         });
 
         function updateChart(product) {
-            const soyData = [7800, 7900, 8000, 8100, 8200, 8300];
-            const rapeData = [7500, 7600, 7700, 7800, 7900, 8000];
+            const soyData = [7800, 7950, 7700, 8100, 8200, 8000];
+            const rapeData = [7500, 7700, 7750, 7800, 7600, 7500];
             priceChart.data.datasets[0].hidden = product !== 'soy';
             priceChart.data.datasets[1].hidden = product !== 'rape';
             priceChart.update();
