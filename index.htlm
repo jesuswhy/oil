@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Масложировая отрасль</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Масложировая отрасль</h1>
+        <nav>
+            <ul>
+                <li><a href="quotes.html">Котировки</a></li>
+                <li><a href="analytics.html">Аналитика</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="dashboard.html">Личный кабинет</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Добро пожаловать на портал масложировой отрасли!</h2>
+        <p>Здесь вы найдете самую актуальную информацию о котировках, аналитике и новостях индустрии.</p>
+    </main>
+</body>
+</html>
