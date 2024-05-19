@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аналитика</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Аналитика</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="quotes.html">Котировки</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="dashboard.html">Личный кабинет</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Выберите провайдера аналитики</h2>
+        <div class="marketplace">
+            <div class="provider">
+                <h3>Provider 1</h3>
+                <button onclick="subscribe('Provider 1')">Подписаться</button>
+            </div>
+            <div class="provider">
+                <h3>Provider 2</h3>
+                <button onclick="subscribe('Provider 2')">Подписаться</button>
+            </div>
+        </div>
+    </main>
+    <script>
+        function subscribe(provider) {
+            alert('Вы подписались на ' + provider);
+            // Здесь вы можете добавить логику для управления подписками
+        }
+    </script>
+</body>
+</html>
