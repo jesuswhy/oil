@@ -4,32 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Котировки</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <header>
+    <header class="bg-primary text-white text-center py-3">
         <h1>Котировки</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="analytics.html">Аналитика</a></li>
-                <li><a href="news.html">Новости</a></li>
-                <li><a href="dashboard.html">Личный кабинет</a></li>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="analytics.html">Аналитика</a></li>
+                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="dashboard.html">Личный кабинет</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <img src="quotes.jpg" alt="Котировки">
+    <main class="container my-4">
+        <img src="quotes.jpg" class="img-fluid rounded mb-4" alt="Котировки">
         <h2>Котировки на китайской сырьевой бирже</h2>
-        <label for="product">Выберите продукт:</label>
-        <select id="product" onchange="updateQuotes()">
-            <option value="soy">Соевое масло</option>
-            <option value="rape">Рапсовое масло</option>
-        </select>
-        <div id="quotes">
-            <p id="soy">Соевое масло: 8000 юаней/тонна</p>
-            <p id="rape" style="display: none;">Рапсовое масло: 7600 юаней/тонна</p>
+        <div class="form-group">
+            <label for="product">Выберите продукт:</label>
+            <select id="product" class="form-control" onchange="updateQuotes()">
+                <option value="soy">Соевое масло</option>
+                <option value="rape">Рапсовое масло</option>
+            </select>
+        </div>
+        <div id="quotes" class="my-3">
+            <p id="soy" class="h4">Соевое масло: 8000 юаней/тонна</p>
+            <p id="rape" class="h4" style="display: none;">Рапсовое масло: 7600 юаней/тонна</p>
         </div>
         <canvas id="priceChart" width="400" height="200"></canvas>
     </main>
@@ -80,8 +83,10 @@
         // Initial call to set the right chart data
         updateChart('soy');
     </script>
-    <footer>
+    <footer class="bg-primary text-white text-center py-3">
         &copy; 2024 Масложировая отрасль. Все права защищены.
     </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
