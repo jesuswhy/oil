@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Личный кабинет</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="quotes.html">Котировки</a></li>
+                <li><a href="analytics.html">Аналитика</a></li>
+                <li><a href="news.html">Новости</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Мои подписки</h2>
+        <ul id="subscriptions">
+            <!-- Здесь будут отображаться подписки пользователя -->
+        </ul>
+    </main>
+    <script>
+        // Пример отображения подписок (может быть заменено на реальную логику)
+        const subscriptions = ['Provider 1', 'Provider 2'];
+        const list = document.getElementById('subscriptions');
+        subscriptions.forEach(sub => {
+            const listItem = document.createElement('li');
+            listItem.textContent = sub;
+            list.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>
