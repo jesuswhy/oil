@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,20 +19,16 @@
         </nav>
     </header>
     <main>
-        <h2>Мои подписки</h2>
-        <ul id="subscriptions">
-            <!-- Здесь будут отображаться подписки пользователя -->
+        <h2>Ваши подписки</h2>
+        <p>Список ваших активных подписок:</p>
+        <ul>
+            <li>Подписка на провайдера 1</li>
+            <li>Подписка на провайдера 2</li>
+            <li>Подписка на провайдера 3</li>
         </ul>
     </main>
-    <script>
-        // Пример отображения подписок (может быть заменено на реальную логику)
-        const subscriptions = ['Provider 1', 'Provider 2'];
-        const list = document.getElementById('subscriptions');
-        subscriptions.forEach(sub => {
-            const listItem = document.createElement('li');
-            listItem.textContent = sub;
-            list.appendChild(listItem);
-        });
-    </script>
+    <footer>
+        &copy; 2024 Масложировая отрасль. Все права защищены.
+    </footer>
 </body>
 </html>
