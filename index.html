@@ -4,51 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Масложировая отрасль</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="bg-primary text-white text-center py-3">
-        <h1>Масложировая отрасль</h1>
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <ul class="navbar-nav mx-auto">
-                 <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="quotes.html">Котировки</a></li>
-                <li class="nav-item"><a class="nav-link" href="analytics.html">Аналитика</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="dashboard.html">Личный кабинет</a></li>
-            </ul>
+    <header class="bg-dark text-white py-3">
+        <nav class="navbar navbar-expand-lg navbar-dark container">
+            <a class="navbar-brand" href="#">Масложировая отрасль</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="quotes.html">Котировки</a></li>
+                    <li class="nav-item"><a class="nav-link" href="analytics.html">Аналитика</a></li>
+                    <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Личный кабинет</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
-    <main class="container my-4">
-        <img src="oil_industry.jpg" class="img-fluid rounded mb-4" alt="Масложировая отрасль">
-        <h2>Добро пожаловать на портал масложировой отрасли!</h2>
-        <p>Здесь вы найдете самую актуальную информацию о котировках, аналитике и новостях индустрии.</p>
+    <main class="container my-5">
+        <section class="text-center mb-5">
+            <img src="oil_industry.jpg" class="img-fluid rounded mb-4" alt="Масложировая отрасль">
+            <h1 class="display-4">Добро пожаловать на портал масложировой отрасли!</h1>
+            <p class="lead">Здесь вы найдете самую актуальную информацию о котировках, аналитике и новостях индустрии.</p>
+        </section>
 
         <section class="my-5">
-            <h3>Последние новости</h3>
-            <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action">
-                    <h4 class="h5">Новость 1</h4>
-                    <p>Содержание новости 1.</p>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                    <h4 class="h5">Новость 2</h4>
-                    <p>Содержание новости 2.</p>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                    <h4 class="h5">Новость 3</h4>
-                    <p>Содержание новости 3.</p>
-                </a>
+            <h2 class="text-center mb-4">Последние новости</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Новость 1</h5>
+                            <p class="card-text">Содержание новости 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Новость 2</h5>
+                            <p class="card-text">Содержание новости 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Новость 3</h5>
+                            <p class="card-text">Содержание новости 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="my-5">
-            <h3>Текущие котировки</h3>
-            <div class="row">
+            <h2 class="text-center mb-4">Текущие котировки</h2>
+            <div class="row text-center">
                 <div class="col-md-6">
-                    <div class="card text-center mb-4">
+                    <div class="card mb-4">
                         <div class="card-body">
                             <h4 class="card-title">Соевое масло</h4>
                             <p class="card-text">8000 юаней/тонна</p>
@@ -56,10 +74,10 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="card text-center mb-4">
+                    <div class="card mb-4">
                         <div class="card-body">
                             <h4 class="card-title">Рапсовое масло</h4>
-                            <p class="card-text">7500 юаней/тонна</p>
+                            <p class="card-text">7600 юаней/тонна</p>
                         </div>
                     </div>
                 </div>
@@ -67,24 +85,36 @@
         </section>
 
         <section class="my-5">
-            <h3>Календарь событий</h3>
-            <div class="list-group">
-                <div class="list-group-item">
-                    <h4 class="h5">Событие 1</h4>
-                    <p>Описание события 1. Дата: 25 июня 2024.</p>
+            <h2 class="text-center mb-4">Календарь событий</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Событие 1</h5>
+                            <p class="card-text">Описание события 1. Дата: 25 июня 2024.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="list-group-item">
-                    <h4 class="h5">Событие 2</h4>
-                    <p>Описание события 2. Дата: 10 июля 2024.</p>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Событие 2</h5>
+                            <p class="card-text">Описание события 2. Дата: 10 июля 2024.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="list-group-item">
-                    <h4 class="h5">Событие 3</h4>
-                    <p>Описание события 3. Дата: 15 августа 2024.</p>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Событие 3</h5>
+                            <p class="card-text">Описание события 3. Дата: 15 августа 2024.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
-    <footer class="bg-primary text-white text-center py-3">
+    <footer class="bg-dark text-white text-center py-4">
         &copy; 2024 Масложировая отрасль. Все права защищены.
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
