@@ -4,45 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Новости</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="bg-primary text-white text-center py-3">
-        <h1>Новости</h1>
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="quotes.html">Котировки</a></li>
-                <li class="nav-item"><a class="nav-link" href="analytics.html">Аналитика</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="dashboard.html">Личный кабинет</a></li>
-            </ul>
+    <header class="bg-dark text-white py-3">
+        <nav class="navbar navbar-expand-lg navbar-dark container">
+            <a class="navbar-brand" href="#">Масложировая отрасль</a>
+            <button class="navbar
+-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="quotes.html">Котировки</a></li>
+                    <li class="nav-item"><a class="nav-link" href="analytics.html">Аналитика</a></li>
+                    <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Личный кабинет</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
-    <main class="container my-4">
-        <img src="news.jpg" class="img-fluid rounded mb-4" alt="Новости">
-        <h2>Последние новости масложировой индустрии</h2>
+    <main class="container my-5">
+        <h1 class="text-center mb-4">Новости индустрии</h1>
         <div class="list-group">
             <a href="#" class="list-group-item list-group-item-action">
                 <h3 class="h5">Новость 1</h3>
-                <p>Содержание новости 1.</p>
+                <p>Содержание новости 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </a>
             <a href="#" class="list-group-item list-group-item-action">
                 <h3 class="h5">Новость 2</h3>
-                <p>Содержание новости 2.</p>
+                <p>Содержание новости 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </a>
             <a href="#" class="list-group-item list-group-item-action">
                 <h3 class="h5">Новость 3</h3>
-                <p>Содержание новости 3.</p>
+                <p>Содержание новости 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </a>
             <a href="#" class="list-group-item list-group-item-action">
                 <h3 class="h5">Новость 4</h3>
-                <p>Содержание новости 4.</p>
+                <p>Содержание новости 4. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </a>
         </div>
     </main>
-    <footer class="bg-primary text-white text-center py-3">
+    <footer class="bg-dark text-white text-center py-4">
         &copy; 2024 Масложировая отрасль. Все права защищены.
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
