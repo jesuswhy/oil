@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Котировки</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
@@ -29,13 +30,54 @@
             <p id="soy">Соевое масло: 8000 юаней/тонна</p>
             <p id="rape" style="display: none;">Рапсовое масло: 7600 юаней/тонна</p>
         </div>
+        <canvas id="priceChart" width="400" height="200"></canvas>
     </main>
     <script>
         function updateQuotes() {
             var product = document.getElementById("product").value;
             document.getElementById("soy").style.display = product === "soy" ? "block" : "none";
             document.getElementById("rape").style.display = product === "rape" ? "block" : "none";
+            updateChart(product);
         }
+
+        const ctx = document.getElementById('priceChart').getContext('2d');
+        const priceChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн'],
+                datasets: [{
+                    label: 'Соевое масло',
+                    data: [7800, 7900, 8000, 8100, 8200, 8300],
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    fill: false
+                }, {
+                    label: 'Рапсовое масло',
+                    data: [7500, 7600, 7700, 7800, 7900, 8000],
+                    borderColor: 'rgba(255, 159, 64, 1)',
+                    borderWidth: 1,
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: false
+                    }
+                }
+            }
+        });
+
+        function updateChart(product) {
+            const soyData = [7800, 7900, 8000, 8100, 8200, 8300];
+            const rapeData = [7500, 7600, 7700, 7800, 7900, 8000];
+            priceChart.data.datasets[0].hidden = product !== 'soy';
+            priceChart.data.datasets[1].hidden = product !== 'rape';
+            priceChart.update();
+        }
+
+        // Initial call to set the right chart data
+        updateChart('soy');
     </script>
 </body>
 </html>
