@@ -7,6 +7,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header class="bg-dark text-white py-3">
@@ -26,72 +27,84 @@
             </div>
         </nav>
     </header>
-    <main class="container my-5">
-        <h1 class="text-center mb-4">Котировки рапсового и соевого масла</h1>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card text-center mb-4">
-                    <div class="card-body">
-                        <h4 class="card-title">Соевое масло</h4>
-                        <p class="card-text">8050 юаней/тонна</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card text-center mb-4">
-                    <div class="card-body">
-                        <h4 class="card-title">Рапсовое масло</h4>
-                        <p class="card-text">7450 юаней/тонна</p>
-                    </div>
-                </div>
-            </div>
+    <main class="container my-4">
+        <img src="quotes.jpg" class="img-fluid rounded mb-4" alt="Котировки">
+        <h2>Котировки на китайской сырьевой бирже</h2>
+        <div class="form-group">
+            <label for="product">Выберите продукт:</label>
+            <select id="product" class="form-control" onchange="updateQuotes()">
+                <option value="soy">Соевое масло</option>
+                <option value="rape">Рапсовое масло</option>
+            </select>
         </div>
-
-        <!-- Контейнер для графика -->
-        <div class="chart-container">
-            <canvas id="myChart"></canvas>
+        <div id="quotes" class="my-3">
+            <p id="soy" class="h4">Соевое масло: 8000 юаней/тонна</p>
+            <p id="rape" class="h4" style="display: none;">Рапсовое масло: 7600 юаней/тонна</p>
         </div>
+        <canvas id="priceChartSoy" width="400" height="200"></canvas>
+        <canvas id="priceChartRape" width="400" height="200" style="display: none;"></canvas>
     </main>
-    <footer class="bg-dark text-white text-center py-4">
+    <script>
+        function updateQuotes() {
+            var product = document.getElementById("product").value;
+            document.getElementById("soy").style.display = product === "soy" ? "block" : "none";
+            document.getElementById("rape").style.display = product === "rape" ? "block" : "none";
+            document.getElementById("priceChartSoy").style.display = product === "soy" ? "block" : "none";
+            document.getElementById("priceChartRape").style.display = product === "rape" ? "block" : "none";
+        }
+
+        const ctxSoy = document.getElementById('priceChartSoy').getContext('2d');
+        const ctxRape = document.getElementById('priceChartRape').getContext('2d');
+        
+        const priceChartSoy = new Chart(ctxSoy, {
+            type: 'line',
+            data: {
+                labels: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн'],
+                datasets: [{
+                    label: 'Соевое масло',
+                    data: [7800, 7900, 8000, 8100, 8200, 8300],
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: false
+                    }
+                }
+            }
+        });
+
+        const priceChartRape = new Chart(ctxRape, {
+            type: 'line',
+            data: {
+                labels: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн'],
+                datasets: [{
+                    label: 'Рапсовое масло',
+                    data: [7500, 7600, 7700, 7800, 7900, 8000],
+                    borderColor: 'rgba(255, 159, 64, 1)',
+                    borderWidth: 1,
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: false
+                    }
+                }
+            }
+        });
+
+        // Initial call to set the right chart data
+        updateQuotes();
+    </script>
+    <footer class="bg-primary text-white text-center py-3">
         &copy; 2024 Масложировая отрасль. Все права защищены.
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-    <script>
-        // Данные для графика (примерные)
-        var chartData = {
-            labels: ["Янв", "Фев", "Мар", "Апр", "Май", "Июн"],
-            datasets: [{
-                label: 'Соевое масло',
-                data: [1500, 3200, 5100, 7950, 6000, 8050],
-                borderColor: 'rgb(255, 99, 132)',
-                tension: 0.1
-            }, {
-                label: 'Рапсовое масло',
-                data: [7800, 5650, 2600, 6550, 7500, 7450],
-                borderColor: 'rgb(54, 162, 235)',
-                tension: 0.1
-            }]
-        };
-
-        // Опции для графика
-        var chartOptions = {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        };
-
-        // Получаем контекст для рисования графика
-        var ctx = document.getElementById('myChart').getContext('2d');
-            // Создаем график
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: chartData,
-        options: chartOptions
-    });
-</script>
 </body>
 </html>
