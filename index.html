@@ -7,37 +7,6 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        .calendar {
-            width: 100%;
-        }
-        .calendar table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .calendar th, .calendar td {
-            text-align: center;
-            padding: 10px;
-            border: 1px solid #ddd;
-        }
-        .calendar .day {
-            cursor: pointer;
-            position: relative;
-        }
-        .calendar .event {
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #fff;
-            border: 1px solid #ddd;
-            padding: 10px;
-            display: none;
-        }
-        .calendar .day:hover .event {
-            display: block;
-        }
-    </style>
 </head>
 <body>
     <header class="bg-dark text-white py-3">
@@ -59,98 +28,97 @@
         </nav>
     </header>
     <main class="container my-5">
+        <section class="text-center mb-5">
+            <h1 class="display-4">Добро пожаловать на портал масложировой отрасли!</h1>
+            <p class="lead">Здесь вы найдете самую актуальную информацию о котировках, аналитике и новостях индустрии.</p>
+        </section>
+
+        <section class="my-5">
+            <h2 class="text-center mb-4">Последние новости</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Новость 1</h5>
+                            <p class="card-text">Содержание новости 1.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Новость 2</h5>
+                            <p class="card-text">Содержание новости 2.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Новость 3</h5>
+                            <p class="card-text">Содержание новости 3.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-5">
+            <h2 class="text-center mb-4">Текущие котировки</h2>
+            <div class="row text-center">
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h4 class="card-title">Соевое масло</h4>
+                            <p class="card-text">8000 юаней/тонна</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h4 class="card-title">Рапсовое масло</h4>
+                            <p class="card-text">7500 юаней/тонна</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="my-5">
             <h2 class="text-center mb-4">Календарь событий</h2>
-            <div class="calendar">
-                <div id="calendar-container"></div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Событие 1</h5>
+                            <p class="card-text">Описание события 1. Дата: 25 июня 2024.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Событие 2</h5>
+                            <p class="card-text">Описание события 2. Дата: 10 июля 2024.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Событие 3</h5>
+                            <p class="card-text">Описание события 3. Дата: 15 августа 2024.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
     <footer class="bg-dark text-white text-center py-4">
-        © 2024 Масложировая отрасль. Все права защищены.
+        &copy; 2024 Масложировая отрасль. Все права защищены.
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Получаем текущую дату
-        const today = new Date();
-        const currentMonth = today.getMonth();
-        const currentYear = today.getFullYear();
-
-        // Функция для создания календаря
-        function createCalendar(month, year) {
-            const calendarContainer = document.getElementById("calendar-container");
-            calendarContainer.innerHTML = ''; // Очищаем предыдущий календарь
-
-            // Получаем количество дней в месяце
-            const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-            // Получаем день недели первого дня месяца
-            const firstDayOfMonth = new Date(year, month, 1).getDay();
-
-            // Создаем таблицу
-            const table = document.createElement("table");
-            const tableHeader = document.createElement("thead");
-            const tableBody = document.createElement("tbody");
-
-            // Заголовки таблицы (дни недели)
-            const daysOfWeek = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
-            const headerRow = document.createElement("tr");
-            daysOfWeek.forEach(day => {
-                const th = document.createElement("th");
-                th.textContent = day;
-                headerRow.appendChild(th);
-            });
-            tableHeader.appendChild(headerRow);
-
-            // Заполняем таблицу днями
-            let dayCounter = 1;
-            let row = document.createElement("tr");
-            // Добавляем пустые ячейки до первого дня месяца
-            for (let i = 0; i < firstDayOfMonth; i++) {
-                const td = document.createElement("td");
-                row.appendChild(td);
-            }
-            while (dayCounter <= daysInMonth) {
-                const td = document.createElement("td");
-                td.classList.add("day");
-                td.textContent = dayCounter;
-
-                // Добавляем информацию о событиях
-                const events = [
-                    { date: '2024-06-25', title: 'Событие 1: Международная конференция по масложировой отрасли' },
-                    { date: '2024-07-10', title: 'Событие 2: Выставка новинок в области переработки растительных масел' },
-                    { date: '2024-08-15', title: 'Событие 3: Семинар по актуальным вопросам качества масла' },
-                    { date: '2024-09-01', title: 'Событие 4:  Всероссийский форум масложировой отрасли' },
-                    { date: '2024-10-10', title: 'Событие 5:  День масложировой отрасли России' }
-                ];
-
-                const currentEvent = events.find(event => new Date(event.date).getDate() === dayCounter && new Date(event.date).getMonth() === month && new Date(event.date).getFullYear() === year);
-
-                if (currentEvent) {
-                    const eventDiv = document.createElement("div");
-                    eventDiv.classList.add("event");
-                    eventDiv.textContent = currentEvent.title;
-                    td.appendChild(eventDiv);
-                }
-
-                row.appendChild(td);
-
-                // Переход на новую строку, если достигнуто 7 дней
-                if (dayCounter % 7 === 0) {
-                    tableBody.appendChild(row);
-                    row = document.createElement("tr");
-                }
-                dayCounter++;
-            }
-            tableBody.appendChild(row);
-            table.appendChild(tableHeader);
-            table.appendChild(tableBody);
-            calendarContainer.appendChild(table);
-        }
-
-        // Отображаем календарь на текущий месяц
-        createCalendar(currentMonth, currentYear);
-    </script>
 </body>
 </html>
