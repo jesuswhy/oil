@@ -46,23 +46,32 @@
                         </select>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="quantity">Количество (тонн)</label>
-                        <input type="number" class="form-control" id="quantity" required>
+                        <label for="transactionType">Тип сделки</label>
+                        <select id="transactionType" class="form-control" required>
+                            <option value="buy">Покупка</option>
+                            <option value="sell">Продажа</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
+                        <label for="quantity">Количество (тонн)</label>
+                        <input type="number" class="form-control" id="quantity" required>
+                    </div>
+                    <div class="form-group col-md-6">
                         <label for="price">Цена (рублей/тонна)</label>
                         <input type="number" class="form-control" id="price" required>
                     </div>
+                </div>
+                <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="location">Местоположение</label>
                         <input type="text" class="form-control" id="location" required>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="contact">Контактные данные</label>
-                    <input type="text" class="form-control" id="contact" required>
+                    <div class="form-group col-md-6">
+                        <label for="contact">Контактные данные</label>
+                        <input type="text" class="form-control" id="contact" required>
+                    </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Разместить объявление</button>
             </form>
@@ -84,6 +93,7 @@
         document.getElementById('listingForm').addEventListener('submit', function(event) {
             event.preventDefault();
             const productType = document.getElementById('productType').value;
+            const transactionType = document.getElementById('transactionType').value;
             const quantity = document.getElementById('quantity').value;
             const price = document.getElementById('price').value;
             const location = document.getElementById('location').value;
@@ -94,11 +104,12 @@
             listing.innerHTML = `
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">${productType === 'soy' ? 'Соевое масло' : productType === 'rape' ? 'Рапсовое масло' : 'Сырье для производства'}</h5>
+                        <h5 class="card-title">${transactionType === 'buy' ? 'Покупка' : 'Продажа'} - ${productType === 'soy' ? 'Соевое масло' : productType === 'rape' ? 'Рапсовое масло' : 'Сырье для производства'}</h5>
                         <p class="card-text">Количество: ${quantity} тонн</p>
                         <p class="card-text">Цена: ${price} рублей/тонна</p>
                         <p class="card-text">Местоположение: ${location}</p>
                         <p class="card-text">Контакты: ${contact}</p>
+                        <button class="btn btn-primary">Связаться</button>
                     </div>
                 </div>
             `;
