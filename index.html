@@ -7,6 +7,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
 </head>
 <body>
     <header class="bg-dark text-white py-3">
@@ -36,32 +37,30 @@
         <section class="my-5">
             <h2 class="text-center mb-4">Последние новости</h2>
             <div class="row">
-                <div class="col-md-4">
+                <!-- Example news articles with brief summaries -->
+                <div class="col-md-6 mb-4">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Новость 1</h5>
-                            <p class="card-text">Содержание новости 1.</p>
+                            <h5 class="card-title">В Ruseed оценили ситуацию с пересевом подсолнечника в РФ</h5>
+                            <p class="card-text">По оценкам компании RUSEED, площадь пересева подсолнечника может составить от 145 до 155 тысяч га...</p>
+                            <p class="text-muted"><small>Краткая выжимка сделана нейросетью</small></p>
+                            <a href="#" class="btn btn-primary">Прочитать полностью</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6 mb-4">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Новость 2</h5>
-                            <p class="card-text">Содержание новости 2.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Новость 3</h5>
-                            <p class="card-text">Содержание новости 3.</p>
+                            <h5 class="card-title">Союз экспортеров представил консенсус-прогноз урожая зерна в РФ</h5>
+                            <p class="card-text">Союз экспортеров зерна оценил валовый сбор зерна в 2024 году в 134,5 млн тонн...</p>
+                            <p class="text-muted"><small>Краткая выжимка сделана нейросетью</small></p>
+                            <a href="#" class="btn btn-primary">Прочитать полностью</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
 
         <section class="my-5">
             <h2 class="text-center mb-4">Текущие котировки</h2>
@@ -85,40 +84,52 @@
             </div>
         </section>
 
+
         <section class="my-5">
             <h2 class="text-center mb-4">Календарь событий</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Событие 1</h5>
-                            <p class="card-text">Описание события 1. Дата: 25 июня 2024.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Событие 2</h5>
-                            <p class="card-text">Описание события 2. Дата: 10 июля 2024.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Событие 3</h5>
-                            <p class="card-text">Описание события 3. Дата: 15 августа 2024.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div id="calendar"></div>
         </section>
     </main>
     <footer class="bg-dark text-white text-center py-4">
         &copy; 2024 Масложировая отрасль. Все права защищены.
     </footer>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#calendar').fullCalendar({
+                locale: 'ru',
+                events: [
+                    {
+                        title: 'Событие 1',
+                        start: '2024-06-25',
+                        description: 'Описание события 1. Дата: 25 июня 2024.'
+                    },
+                    {
+                        title: 'Событие 2',
+                        start: '2024-07-10',
+                        description: 'Описание события 2. Дата: 10 июля 2024.'
+                    },
+                    {
+                        title: 'Событие 3',
+                        start: '2024-08-15',
+                        description: 'Описание события 3. Дата: 15 августа 2024.'
+                    }
+                ],
+                eventRender: function(event, element) {
+                    element.qtip({
+                        content: event.description,
+                        style: {
+                            classes: 'qtip-dark qtip-shadow'
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.js"></script>
 </body>
-</html> 
+</html>
