@@ -7,17 +7,6 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        .event-dot {
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: red;
-            margin-right: 5px;
-            cursor: pointer;
-        }
-    </style>
 </head>
 <body>
     <header class="bg-dark text-white py-3">
@@ -98,8 +87,32 @@
 
         <section class="my-5">
             <h2 class="text-center mb-4">Календарь событий</h2>
-            <div id="currentMonthCalendar" class="row"></div>
-            <div id="nextMonthCalendar" class="row"></div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Событие 1</h5>
+                            <p class="card-text">Описание события 1. Дата: 25 июня 2024.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Событие 2</h5>
+                            <p class="card-text">Описание события 2. Дата: 10 июля 2024.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Событие 3</h5>
+                            <p class="card-text">Описание события 3. Дата: 15 августа 2024.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <footer class="bg-dark text-white text-center py-4">
@@ -107,51 +120,5 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // События на текущий и следующий месяцы
-        const events = [
-            { date: '2024-06-25', title: 'Событие 1', description: 'Описание события 1' },
-            { date: '2024-07-10', title: 'Событие 2', description: 'Описание события 2' },
-           
-            { date: '2024-08-15', title: 'Событие 3', description: 'Описание события 3' }
-        ];
-
-        // Функция для создания точки события
-        function createEventDot(event) {
-            const dot = document.createElement('div');
-            dot.classList.add('event-dot');
-            dot.title = `${event.title}: ${event.description}`;
-            return dot;
-        }
-
-        // Функция для добавления событий на календарь
-        function addEventsToCalendar(events, calendarId) {
-            const calendar = document.getElementById(calendarId);
-            const currentDate = new Date();
-            const currentMonth = currentDate.getMonth();
-            const currentYear = currentDate.getFullYear();
-
-            events.forEach(event => {
-                const eventDate = new Date(event.date);
-                const eventMonth = eventDate.getMonth();
-                const eventYear = eventDate.getFullYear();
-
-                // Проверяем, что событие в текущем или следующем месяце
-                if ((currentMonth === eventMonth && currentYear === eventYear) || (currentMonth + 1 === eventMonth && currentYear === eventYear)) {
-                    const dayOfMonth = eventDate.getDate();
-                    const dayElement = calendar.querySelector(`[data-day="${dayOfMonth}"]`);
-                    if (dayElement) {
-                        const eventDot = createEventDot(event);
-                        dayElement.appendChild(eventDot);
-                    }
-                }
-            });
-        }
-
-        // Добавляем события на календарь текущего месяца
-        addEventsToCalendar(events, 'currentMonthCalendar');
-        // Добавляем события на календарь следующего месяца
-        addEventsToCalendar(events, 'nextMonthCalendar');
-    </script>
 </body>
-</html>
+</html> 
