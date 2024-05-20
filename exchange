@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P2P Площадка - Масложировая отрасль</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="bg-dark text-white py-3">
+        <nav class="navbar navbar-expand-lg navbar-dark container">
+            <a class="navbar-brand" href="#">Масложировая отрасль</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="quotes.html">Котировки</a></li>
+                    <li class="nav-item"><a class="nav-link" href="analytics.html">Аналитика</a></li>
+                    <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Личный кабинет</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="container my-5">
+        <section class="text-center mb-5">
+            <img src="" class="img-fluid rounded mb-4" alt="Масложировая отрасль">
+            <h1 class="display-4">P2P Площадка для торговли масложировыми продуктами</h1>
+            <p class="lead">Покупайте и продавайте растительные масла и сырье напрямую друг у друга.</p>
+        </section>
+
+        <section class="my-5">
+            <h2 class="text-center mb-4">Разместить объявление</h2>
+            <form id="listingForm" class="mb-5">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="productType">Тип продукта</label>
+                        <select id="productType" class="form-control" required>
+                            <option value="soy">Соевое масло</option>
+                            <option value="rape">Рапсовое масло</option>
+                            <option value="rawMaterial">Сырье для производства</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="quantity">Количество (тонн)</label>
+                        <input type="number" class="form-control" id="quantity" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="price">Цена (юаней/тонна)</label>
+                        <input type="number" class="form-control" id="price" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="location">Местоположение</label>
+                        <input type="text" class="form-control" id="location" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="contact">Контактные данные</label>
+                    <input type="text" class="form-control" id="contact" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Разместить объявление</button>
+            </form>
+        </section>
+
+        <section class="my-5">
+            <h2 class="text-center mb-4">Список объявлений</h2>
+            <div id="listings" class="row">
+                <!-- Объявления будут добавляться здесь динамически -->
+            </div>
+        </section>
+    </main>
+    <footer class="bg-dark text-white text-center py-4">
+        &copy; 2024 Масложировая отрасль. Все права защищены.
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('listingForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const productType = document.getElementById('productType').value;
+            const quantity = document.getElementById('quantity').value;
+            const price = document.getElementById('price').value;
+            const location = document.getElementById('location').value;
+            const contact = document.getElementById('contact').value;
+
+            const listing = document.createElement('div');
+            listing.className = 'col-md-4 mb-4';
+            listing.innerHTML = `
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">${productType === 'soy' ? 'Соевое масло' : productType === 'rape' ? 'Рапсовое масло' : 'Сырье для производства'}</h5>
+                        <p class="card-text">Количество: ${quantity} тонн</p>
+                        <p class="card-text">Цена: ${price} юаней/тонна</p>
+                        <p class="card-text">Местоположение: ${location}</p>
+                        <p class="card-text">Контакты: ${contact}</p>
+                    </div>
+                </div>
+            `;
+            document.getElementById('listings').appendChild(listing);
+
+            document.getElementById('listingForm').reset();
+        });
+    </script>
+</body>
+</html>
