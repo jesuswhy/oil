@@ -7,6 +7,25 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .navbar-nav .nav-item .nav-icon {
+            width: 35px;
+            height: 35px;
+            display: block;
+            margin: 0 auto;
+        }
+        .navbar-nav {
+            align-items: center;
+        }
+        .navbar-nav .nav-item {
+            text-align: center;
+        }
+        .navbar-nav .nav-item .username {
+            color: white;
+            margin-top: 0.5rem;
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <header class="bg-dark text-white py-3">
@@ -22,7 +41,10 @@
                     <li class="nav-item"><a class="nav-link" href="analytics.html">Аналитика</a></li>
                     <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
                     <li class="nav-item"><a class="nav-link" href="exchange.html">Торговая площадка</a></li>
-                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Личный кабинет</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">
+                            <img src="https://cdn-icons-png.flaticon.com/128/149/149071.png" alt="Личный кабинет" class="nav-icon">
+                        </a>
                 </ul>
             </div>
         </nav>
