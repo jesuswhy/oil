@@ -8,6 +8,31 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+    <style>
+        /* Уменьшаем размер календаря */
+        #calendar {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        /* Добавляем стили для иконки */
+        .navbar-nav .nav-item .nav-icon {
+            width: 35px;
+            height: 35px;
+            display: block;
+            margin: 0 auto;
+        }
+        .navbar-nav {
+            align-items: center;
+        }
+        .navbar-nav .nav-item {
+            text-align: center;
+        }
+        .navbar-nav .nav-item .username {
+            color: white;
+            margin-top: 0.5rem;
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <header class="bg-dark text-white py-3">
@@ -23,15 +48,41 @@
                     <li class="nav-item"><a class="nav-link" href="analytics.html">Аналитика</a></li>
                     <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
                     <li class="nav-item"><a class="nav-link" href="exchange.html">Торговая площадка</a></li>
-                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Личный кабинет</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">
+                            <img src="https://cdn-icons-png.flaticon.com/128/149/149071.png" alt="Личный кабинет" class="nav-icon">
+                        </a>
+                    </li>
                 </ul>
             </div>
         </nav>
     </header>
     <main class="container my-5">
         <section class="text-center mb-5">
-            <h1 class="display-4">Добро пожаловать на портал масложировой отрасли!</h1>
+            <h1 class="display-5">Добро пожаловать на портал масложировой отрасли!</h1>
             <p class="lead">Здесь вы найдете самую актуальную информацию о котировках, аналитике и новостях индустрии.</p>
+        </section>
+
+        <section class="my-5">
+            <h2 class="text-center mb-4">Текущие котировки</h2>
+            <div class="row text-center">
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h4 class="card-title">Соевое масло</h4>
+                            <p class="card-text">8000 юаней/тонна</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h4 class="card-title">Рапсовое масло</h4>
+                            <p class="card-text">7500 юаней/тонна</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section class="my-5">
@@ -60,30 +111,6 @@
                 </div>
             </div>
         </section>
-
-
-        <section class="my-5">
-            <h2 class="text-center mb-4">Текущие котировки</h2>
-            <div class="row text-center">
-                <div class="col-md-6">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h4 class="card-title">Соевое масло</h4>
-                            <p class="card-text">8000 юаней/тонна</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h4 class="card-title">Рапсовое масло</h4>
-                            <p class="card-text">7500 юаней/тонна</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
 
         <section class="my-5">
             <h2 class="text-center mb-4">Календарь событий</h2>
