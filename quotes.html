@@ -48,6 +48,34 @@
             margin-top: 2rem;
             margin-bottom: 2rem;
         }
+        .user-comments {
+            margin-top: 2rem;
+        }
+        .user-comments h3 {
+            margin-bottom: 1.5rem;
+        }
+        .user-comment {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            display: flex;
+            align-items: start;
+        }
+        .user-comment img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
+        }
+        .comment-form {
+            margin-top: 2rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -116,6 +144,40 @@
         <div class="chart-container">
             <canvas id="priceChartSoy" width="1300" height="500"></canvas>
             <canvas id="priceChartRape" width="1300" height="500" style="display: none;"></canvas>
+        </div>
+
+        <div class="user-comments">
+            <h3>Комментарии пользователей</h3>
+            <div class="user-comment">
+                <img src="https://opis-cdn.tinkoffjournal.ru/mercury/neural-photo-4.fucpkk..jpg" alt="Иван Иванов">
+                <div>
+                    <strong>Иван Иванов:</strong>
+                    <p>Цены на соевое масло стремительно растут. Думаю, что это временный отскок.</p>
+                </div>
+            </div>
+            <div class="user-comment">
+                <img src="https://opis-cdn.tinkoffjournal.ru/mercury/neural-photo-1.iehmu4..jpeg" alt="Ольга Петрова">
+                <div>
+                    <strong>Ольга Петрова:</strong>
+                    <p>Рапсовое масло продолжает падать в цене. С чем это может быть связано?</p>
+                </div>
+            </div>
+            <!-- Добавить другие комментарии по необходимости -->
+        </div>
+
+        <div class="comment-form">
+            <h3>Добавить комментарий</h3>
+            <form>
+                <div class="form-group">
+                    <label for="username">Имя</label>
+                    <input type="text" class="form-control" id="username" placeholder="Ваше имя">
+                </div>
+                <div class="form-group">
+                    <label for="comment">Комментарий</label>
+                    <textarea class="form-control" id="comment" rows="3" placeholder="Ваш комментарий"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Отправить</button>
+            </form>
         </div>
     </main>
     <footer class="bg-dark text-white text-center py-4">
