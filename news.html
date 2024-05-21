@@ -25,6 +25,30 @@
             margin-top: 0.5rem;
             display: block;
         }
+        .news-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        .news-card .card-body {
+            position: relative;
+        }
+        .news-date {
+            position: absolute;
+            top: -1.5rem;
+            right: 1rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+        }
+        .news-category {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            background-color: #3334;
+            color: white;
+            border-radius: 0.25rem;
+            font-size: 0.85rem;
+        }
     </style>
 </head>
 <body>
@@ -45,6 +69,7 @@
                         <a class="nav-link" href="dashboard.html">
                             <img src="https://cdn-icons-png.flaticon.com/128/149/149071.png" alt="Личный кабинет" class="nav-icon">
                         </a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -54,63 +79,81 @@
         <div class="row">
             <!-- Пример новостей с Краткая выжимка -->
             <div class="col-md-6 mb-4">
-                <div class="card">
+                <div class="card news-card">
+                    <img src="https://images.freeimages.com/images/large-previews/aff/sunflower-field-1366442.jpg" alt="Новость 1" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">В Ruseed оценили ситуацию с пересевом подсолнечника в РФ</h5>
+                        <p class="news-category">Аналитика</p>
                         <p class="card-text">По оценкам компании RUSEED, площадь пересева подсолнечника может составить от 145 до 155 тысяч га...</p>
                         <p class="text-muted"><small>Краткая выжимка сделана нейросетью</small></p>
                         <a href="#" class="btn btn-primary">Прочитать полностью</a>
+                        <div class="news-date">21 мая 2024</div>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 mb-4">
-                <div class="card">
+                <div class="card news-card">
+                    <img src="https://grozny.tv/storage/images/867cc37c-f3eb-4884-b294-6beb88fff4f0.jpg" alt="Новость 2" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">Союз экспортеров представил консенсус-прогноз урожая зерна в РФ</h5>
+                        <p class="news-category">Экономика</p>
                         <p class="card-text">Союз экспортеров зерна оценил валовый сбор зерна в 2024 году в 134,5 млн тонн...</p>
                         <p class="text-muted"><small>Краткая выжимка сделана нейросетью</small></p>
                         <a href="#" class="btn btn-primary">Прочитать полностью</a>
+                        <div class="news-date">20 мая 2024</div>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 mb-4">
-                <div class="card">
+                <div class="card news-card">
+                    <img src="https://fczerna.ru/upload/resize_cache/iblock/648/1100_595_2/um69kmxj32z9cqv05ugf2l2ismrwvgzu.jpg" alt="Новость 3" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">Индия в апреле сократила экспорт шротов</h5>
+                        <p class="news-category">Рынок</p>
                         <p class="card-text">Общий объем экспорта шрота из Индии в апреле 2024 года снизился на 6%...</p>
                         <p class="text-muted"><small>Краткая выжимка сделана нейросетью</small></p>
                         <a href="#" class="btn btn-primary">Прочитать полностью</a>
+                        <div class="news-date">19 мая 2024</div>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 mb-4">
-                <div class="card">
+                <div class="card news-card">
+                    <img src="https://neftregion.ru/content/news/biotoplivo-podsolnuxy.jpg" alt="Новость 4" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">Власти КНР могут обязать авиакомпании использовать биотопливо</h5>
+                        <p class="news-category">Технологии</p>
                         <p class="card-text">Производители биотоплива ждут, когда власти Китая обяжут авиакомпании использовать авиакеросин с добавлением...</p>
                         <p class="text-muted"><small>Краткая выжимка сделана нейросетью</small></p>
                         <a href="#" class="btn btn-primary">Прочитать полностью</a>
+                        <div class="news-date">18 мая 2024</div>
                     </div>
                 </div>
             </div>
             <!-- Примеры других новостей -->
             <div class="col-md-6 mb-4">
-                <div class="card">
+                <div class="card news-card">
+                    <img src="https://77.rospotrebnadzor.ru/images/oil2.jpg" alt="Новость 5" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">Цены на растительные масла продолжают падать</h5>
+                        <p class="news-category">Рынок</p>
                         <p class="card-text">Цены на растительные масла на мировых рынках продолжают снижаться, достигая многолетних минимумов...</p>
                         <p class="text-muted"><small>Краткая выжимка сделана нейросетью</small></p>
                         <a href="#" class="btn btn-primary">Прочитать полностью</a>
+                        <div class="news-date">17 мая 2024</div>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 mb-4">
-                <div class="card">
+                <div class="card news-card">
+                    <img src="https://s6.stc.all.kpcdn.net/expert/wp-content/uploads/2022/08/luchshee-podsolnechnoe-maslo-960x540.jpg" alt="Новость 6" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">Украина увеличила экспорт подсолнечного масла</h5>
+                        <p class="news-category">Экспорт</p>
                         <p class="card-text">Экспорт подсолнечного масла из Украины в первом квартале 2024 года увеличился на 15%...</p>
                         <p class="text-muted"><small>Краткая выжимка сделана нейросетью</small></p>
                         <a href="#" class="btn btn-primary">Прочитать полностью</a>
+                        <div class="news-date">16 мая 2024</div>
                     </div>
                 </div>
             </div>
