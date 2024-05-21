@@ -25,6 +25,29 @@
             margin-top: 0.5rem;
             display: block;
         }
+        .table-responsive {
+            margin-bottom: 1.5rem;
+        }
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin-bottom: 2rem;
+        }
+        .chart-container canvas {
+            display: block;
+            margin: 0 auto;
+        }
+        .expert-opinions {
+            margin-top: 2rem;
+        }
+        .expert-opinions h3 {
+            margin-bottom: 1.5rem;
+        }
+        .market-sentiment {
+            text-align: center;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -46,12 +69,42 @@
                         <a class="nav-link" href="dashboard.html">
                             <img src="https://cdn-icons-png.flaticon.com/128/149/149071.png" alt="Личный кабинет" class="nav-icon">
                         </a>
+                    </li>
                 </ul>
             </div>
         </nav>
     </header>
     <main class="container my-4">
-        <h2>Котировки на китайской сырьевой бирже</h2>
+        <h2 class="text-center mb-4">Котировки на китайской сырьевой бирже</h2>
+        
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Продукт</th>
+                        <th>Цена (юаней/тонна)</th>
+                        <th>Изменение (%)</th>
+                        <th>Объем (лотов)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Соевое масло</td>
+                        <td>8000</td>
+                        <td class="text-success">+1.2%</td>
+                        <td>1200</td>
+                    </tr>
+                    <tr>
+                        <td>Рапсовое масло</td>
+                        <td>7600</td>
+                        <td class="text-danger">-0.8%</td>
+                        <td>850</td>
+                    </tr>
+                    <!-- Добавить другие продукты по необходимости -->
+                </tbody>
+            </table>
+        </div>
+
         <div class="form-group">
             <label for="product">Выберите продукт:</label>
             <select id="product" class="form-control" onchange="updateQuotes()">
@@ -59,18 +112,18 @@
                 <option value="rape">Рапсовое масло</option>
             </select>
         </div>
-        <div id="quotes" class="my-3">
-            <p id="soy" class="h4">Соевое масло: 8000 юаней/тонна</p>
-            <p id="rape" class="h4" style="display: none;">Рапсовое масло: 7600 юаней/тонна</p>
+        
+        <div class="chart-container">
+            <canvas id="priceChartSoy" width="1300" height="500"></canvas>
+            <canvas id="priceChartRape" width="1300" height="500" style="display: none;"></canvas>
         </div>
-        <canvas id="priceChartSoy" width="400" height="200"></canvas>
-        <canvas id="priceChartRape" width="400" height="200" style="display: none;"></canvas>
     </main>
+    <footer class="bg-dark text-white text-center py-4">
+        &copy; 2024 Масложировая отрасль. Все права защищены.
+    </footer>
     <script>
         function updateQuotes() {
             var product = document.getElementById("product").value;
-            document.getElementById("soy").style.display = product === "soy" ? "block" : "none";
-            document.getElementById("rape").style.display = product === "rape" ? "block" : "none";
             document.getElementById("priceChartSoy").style.display = product === "soy" ? "block" : "none";
             document.getElementById("priceChartRape").style.display = product === "rape" ? "block" : "none";
         }
@@ -123,9 +176,6 @@
         // Initial call to set the right chart data
         updateQuotes();
     </script>
-    <footer class="bg-dark text-white text-center py-4">
-        &copy; 2024 Масложировая отрасль. Все права защищены.
-    </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
