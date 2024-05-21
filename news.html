@@ -49,6 +49,9 @@
             border-radius: 0.25rem;
             font-size: 0.85rem;
         }
+        .search-bar {
+            margin-bottom: 2rem;
+        }
     </style>
 </head>
 <body>
@@ -76,6 +79,20 @@
     </header>
     <main class="container my-5">
         <h1 class="text-center mb-4">Новости индустрии</h1>
+        
+        <!-- Поиск по категориям новостей -->
+        <div class="search-bar">
+            <label for="categorySearch" class="form-label">Поиск по категориям:</label>
+            <select id="categorySearch" class="form-control">
+                <option value="all">Все категории</option>
+                <option value="market">Рынок</option>
+                <option value="technology">Технологии</option>
+                <option value="export">Экспорт</option>
+                <option value="analytics">Аналитика</option>
+                <option value="economy">Экономика</option>
+            </select>
+        </div>
+        
         <div class="row">
             <!-- Пример новостей с Краткая выжимка -->
             <div class="col-md-6 mb-4">
