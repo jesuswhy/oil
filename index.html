@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
     <style>
         /* Уменьшаем размер календаря */
+
         #calendar {
             max-width: 600px;
             margin: 0 auto;
@@ -32,11 +33,44 @@
             margin-top: 0.5rem;
             display: block;
         }
+        .hot-news {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 1rem;
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 0.25rem;
+            margin-bottom: 2rem;
+        }
+        .hot-news h5 {
+            margin-bottom: 1rem;
+        }
+        .hot-news ul {
+            list-style: none;
+            padding: 0;
+        }
+        .hot-news ul li {
+            margin-bottom: 0.5rem;
+        }
+        .hot-news ul li a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        .quotes {
+            margin-bottom: 2rem;
+        }
+        .quotes .card {
+            margin-bottom: 1rem;
+        }
     </style>
 </head>
 <body>
     <header class="bg-dark text-white py-3">
         <nav class="navbar navbar-expand-lg navbar-dark container">
+            <a class="navbar-brand" href="#">
+                <img src="https://i.postimg.cc/PqYpW6j1/logo-no-background.png" alt="Логотип" class="logo">
+            </a>
             <a class="navbar-brand" href="#">Масложировая отрасль</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -63,59 +97,43 @@
             <p class="lead">Здесь вы найдете самую актуальную информацию о котировках, аналитике и новостях индустрии</p>
         </section>
 
-        <section class="my-5">
-            <h2 class="text-center mb-4">Текущие котировки</h2>
-            <div class="row text-center">
-                <div class="col-md-6">
-                    <div class="card mb-4">
+        <div class="row">
+            <div class="col-lg-8">
+                <section class="my-5">
+                    <h2 class="text-center mb-4">Календарь событий</h2>
+                    <div id="calendar"></div>
+                </section>
+            </div>
+            <div class="col-lg-4">
+                <div class="quotes">
+                    <h5>Текущие котировки</h5>
+                    <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Соевое масло</h4>
                             <p class="card-text">8000 юаней/тонна</p>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card mb-4">
+                    <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Рапсовое масло</h4>
                             <p class="card-text">7500 юаней/тонна</p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="my-5">
-            <h2 class="text-center mb-4">Последние новости</h2>
-            <div class="row">
-                <!-- Example news articles with brief summaries -->
-                <div class="col-md-6 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">В Ruseed оценили ситуацию с пересевом подсолнечника в РФ</h5>
-                            <p class="card-text">По оценкам компании RUSEED, площадь пересева подсолнечника может составить от 145 до 155 тысяч га...</p>
-                            <p class="text-muted"><small>Краткая выжимка сделана нейросетью</small></p>
-                            <a href="#" class="btn btn-primary">Прочитать полностью</a>
-                        </div>
-                    </div>
+                <div class="hot-news">
+                    <h5>Горячие новости</h5>
+                    <ul>
+                        <li><a href="#">Цены на нефть падают на фоне избытка предложения</a></li>
+                        <li><a href="#">Новый рекорд урожайности пшеницы в России</a></li>
+                        <li><a href="#">Экспорт масла из Украины увеличился на 20%</a></li>
+                        <li><a href="#">Спрос на биотопливо в Европе растет</a></li>
+                        <li><a href="#">Прогнозы экспертов по ценам на зерно в 2024 году</a></li>
+                    </ul>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Союз экспортеров представил консенсус-прогноз урожая зерна в РФ</h5>
-                            <p class="card-text">Союз экспортеров зерна оценил валовый сбор зерна в 2024 году в 134,5 млн тонн...</p>
-                            <p class="text-muted"><small>Краткая выжимка сделана нейросетью</small></p>
-                            <a href="#" class="btn btn-primary">Прочитать полностью</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <section class="my-5">
-            <h2 class="text-center mb-4">Календарь событий</h2>
-            <div id="calendar"></div>
-        </section>
+
+            </div>
+        </div>
     </main>
     <footer class="bg-dark text-white text-center py-4">
         &copy; 2024 Масложировая отрасль. Все права защищены.
